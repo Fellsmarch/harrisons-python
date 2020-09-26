@@ -12,7 +12,7 @@ If you would like to install this as an available module yourself add it to your
 5. If it does not, add the location of the git repository to the `PYTHONPATH`
 
 ### Visual Studio Code
-Go to settings.json as all this setting:
+If you are getting pylint errors when trying to import the module go to settings.json and add this setting:
 ```    
 "python.autoComplete.extraPaths": [
     "<PATH_TO_GIT_REPO>"
