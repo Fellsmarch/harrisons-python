@@ -1,6 +1,7 @@
 from typing import List, Callable, Dict
 
-def create_csv_dict(headers: List[str], lines: List[str], break_condition: Callable[[List], bool]=None) -> Dict: 
+
+def create_csv_dict(headers: List[str], lines: List[str], break_condition: Callable[[List], bool] = None) -> Dict:
     """
     Maps a list of CSV content into a dictionary.
 
@@ -12,12 +13,13 @@ def create_csv_dict(headers: List[str], lines: List[str], break_condition: Calla
     """
     # Could do this as a default argument, but this is nicer.
     if not break_condition:
-        break_condition = lambda line: not line[0]
+        def break_condition(line): return not line[0]
 
     csv_dict = {header: [] for header in headers}
     for line in lines:
         line = line.split(",")
-        if break_condition(line): break
+        if break_condition(line):
+            break
 
         for index, header in enumerate(headers):
             csv_dict[header].append(line[index])

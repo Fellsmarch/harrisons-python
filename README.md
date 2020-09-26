@@ -18,3 +18,4 @@ If you are getting pylint errors when trying to import the module go to settings
     "<PATH_TO_GIT_REPO>"
 ],
 ```
+Then restart VS Code
