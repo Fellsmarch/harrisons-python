@@ -13,7 +13,7 @@ def create_csv_dict(headers: List[str], lines: List[str], break_condition: Calla
     """
     # Could do this as a default argument, but this is nicer.
     if not break_condition:
-        def break_condition(line): return not line[0]
+        break_condition = lambda line: not line[0]
 
     csv_dict = {header: [] for header in headers}
     for line in lines:
